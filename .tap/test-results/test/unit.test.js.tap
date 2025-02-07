@@ -1,0 +1,97 @@
+TAP version 14
+# Subtest: make sure date format is valid
+    ok 1 - type is string
+    ok 2 - should be equal
+    1..2
+ok 1 - make sure date format is valid # time=2.277ms
+
+# Subtest: make sure log is a valid json
+    1..4
+    ok 1 - should be equal
+    ok 2 - true
+    ok 3 - type is string
+    ok 4 - should match pattern
+ok 2 - make sure log is a valid json # time=24.666ms
+
+# Subtest: date can be a number
+    1..1
+    ok 1 - should be equal
+ok 3 - date can be a number # time=1.749ms
+
+# Subtest: Uses the type parameter only with ES < 7 / 1
+    1..2
+    ok 1 - should be equal
+    ok 2 - should be equal
+ok 4 - Uses the type parameter only with ES < 7 / 1 # time=1.753ms
+
+# Subtest: Uses the type parameter only with ES < 7 / 1, even with the deprecated `esVersion` option
+    1..2
+    ok 1 - should be equal
+    ok 2 - should be equal
+ok 5 - Uses the type parameter only with ES < 7 / 1, even with the deprecated `esVersion` option # time=1.516ms
+
+# Subtest: Uses the type parameter only with ES < 7 / 2
+    1..2
+    ok 1 - should be equal
+    ok 2 - should be equal
+ok 6 - Uses the type parameter only with ES < 7 / 2 # time=1.041ms
+
+# Subtest: Uses the type parameter only with ES < 7 / 2, even with the deprecate `esVersion` option
+    1..2
+    ok 1 - should be equal
+    ok 2 - should be equal
+ok 7 - Uses the type parameter only with ES < 7 / 2, even with the deprecate `esVersion` option # time=1.021ms
+
+# Subtest: ecs format
+    1..5
+    ok 1 - should be equal
+    ok 2 - true
+    ok 3 - type is string
+    ok 4 - should be equal
+    ok 5 - should match pattern
+ok 8 - ecs format # time=1.749ms
+
+# Subtest: auth and cloud parameters are properly passed to client
+    1..3
+    ok 1 - should be equal
+    ok 2 - should be equal
+    ok 3 - should be equal
+ok 9 - auth and cloud parameters are properly passed to client # time=0.888ms
+
+# Subtest: apiKey is passed through auth param properly to client
+    1..2
+    ok 1 - should be equal
+    ok 2 - should be equal
+ok 10 - apiKey is passed through auth param properly to client # time=0.918ms
+
+# Subtest: make sure `flushInterval` is passed to bulk request
+    1..1
+    ok 1 - should be equal
+ok 11 - make sure `flushInterval` is passed to bulk request # time=0.866ms
+
+# Subtest: make sure `flushBytes` is passed to bulk request
+    1..1
+    ok 1 - should be equal
+ok 12 - make sure `flushBytes` is passed to bulk request # time=0.75ms
+
+# Subtest: make sure `opType` is passed to bulk onDocument request
+    1..2
+    ok 1 - _index should be correctly set to `pinotest`
+    ok 2 - `op_type` should be set to `create`
+ok 13 - make sure `opType` is passed to bulk onDocument request # time=0.79ms
+
+# Subtest: make sure `@timestamp` is correctly set when `opType` is `create`
+    1..1
+    ok 1 - Document @timestamp does not equal the provided timestamp
+ok 14 - make sure `@timestamp` is correctly set when `opType` is `create` # time=0.708ms
+
+# Subtest: resurrect client connection pool when datasource split is destroyed
+    1..0
+ok 15 - resurrect client connection pool when datasource split is destroyed # time=0.592ms
+
+# Subtest: make sure `ssl.rejectUnauthorized` is passed to client constructor
+    1..1
+    ok 1 - should be equal
+ok 16 - make sure `ssl.rejectUnauthorized` is passed to client constructor # time=0.692ms
+
+1..16

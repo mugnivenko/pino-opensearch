@@ -1,0 +1,823 @@
+TAP version 14
+# Subtest: store a log line
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 12
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 48
+            resurrectTimeout: 1738928045944
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 1 - store a log line # time=14.563ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 71
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('store a log line', { timeout }, async (t) => {
+    ^
+      t.plan(2)
+  ...
+
+# Subtest: Ignores a boolean line even though it is JSON-parsable
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 24
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 96
+            resurrectTimeout: 1738928046002
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 2 - Ignores a boolean line even though it is JSON-parsable # time=4.118ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 93
+    columnNumber: 1
+    typeName: Object
+  source: >
+    })
+  
+  
+    test('Ignores a boolean line even though it is JSON-parsable', { timeout },
+    (t) => {
+  
+    ^
+      t.plan(2)
+  ...
+
+# Subtest: Ignores "null" being parsed as json
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 36
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 144
+            resurrectTimeout: 1738928046027
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 3 - Ignores "null" being parsed as json # time=3.643ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 106
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('Ignores "null" being parsed as json', { timeout }, (t) => {
+    ^
+      t.plan(2)
+  ...
+
+# Subtest: Can process number being parsed as json
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 48
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 192
+            resurrectTimeout: 1738928046053
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 4 - Can process number being parsed as json # time=3.763ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 119
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('Can process number being parsed as json', { timeout }, (t) => {
+    ^
+      t.plan(0)
+  ...
+
+# Subtest: store an deeply nested log line
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 60
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 240
+            resurrectTimeout: 1738928046080
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 5 - store an deeply nested log line # time=3.674ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 131
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('store an deeply nested log line', { timeout }, async (t) => {
+    ^
+      t.plan(2)
+  ...
+
+# Subtest: store lines in bulk
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 72
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 288
+            resurrectTimeout: 1738928046102
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 6 - store lines in bulk # time=3.139ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 159
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('store lines in bulk', { timeout }, async (t) => {
+    ^
+      t.plan(6)
+  ...
+
+# Subtest: replaces date in index
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 84
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 336
+            resurrectTimeout: 1738928046126
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 7 - replaces date in index # time=3.151ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 187
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('replaces date in index', { timeout }, async (t) => {
+    ^
+      t.plan(2)
+      const index = 'pinotest-%{DATE}'
+  ...
+
+# Subtest: replaces date in index during bulk insert
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 96
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 384
+            resurrectTimeout: 1738928046151
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 8 - replaces date in index during bulk insert # time=3.929ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 214
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('replaces date in index during bulk insert', { timeout }, async (t) => {
+    ^
+      t.plan(6)
+  ...
+
+# Subtest: Use ecs format
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 108
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 432
+            resurrectTimeout: 1738928046176
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 9 - Use ecs format # time=3.643ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 248
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('Use ecs format', { timeout }, async (t) => {
+    ^
+      t.plan(2)
+  ...
+
+# Subtest: dynamic index name
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 120
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 480
+            resurrectTimeout: 1738928046202
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 10 - dynamic index name # time=3.027ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 270
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('dynamic index name', { timeout }, async (t) => {
+    ^
+      t.plan(4)
+  ...
+
+# Subtest: dynamic index name during bulk insert
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 132
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 528
+            resurrectTimeout: 1738928046226
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 11 - dynamic index name during bulk insert # time=3.25ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 299
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('dynamic index name during bulk insert', { timeout }, async (t) => {
+    ^
+      t.plan(12)
+  ...
+
+# Subtest: handle datastreams during bulk insert
+    not ok 1 - socket hang up
+      ---
+      stack: |
+        ClientRequest.onError (node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js:129:16)
+      at:
+        fileName: node_modules/.pnpm/@opensearch-project+opensearch@3.2.0/node_modules/@opensearch-project/opensearch/lib/Connection.js
+        lineNumber: 129
+        columnNumber: 16
+        typeName: ClientRequest
+        methodName: onError
+        functionName: ClientRequest.onError
+      type: ConnectionError
+      meta:
+        body: null
+        statusCode: null
+        headers: null
+        meta:
+          context: null
+          request:
+            params:
+              method: GET
+              path: /_cluster/health
+              querystring: wait_for_status=green&timeout=60s
+              body: ""
+              headers:
+                user-agent: opensearch-js/3.2.0 (linux 6.11.11-x64; Node.js v22.12.0)
+              timeout: 30000
+            options: {}
+            id: 144
+          name: opensearch-js
+          connection:
+            url: http://127.0.0.1:9200/
+            id: http://127.0.0.1:9200/
+            headers: {}
+            deadCount: 576
+            resurrectTimeout: 1738928046250
+            _openRequests: 0
+            status: dead
+            roles:
+              data: true
+              ingest: true
+          attempts: 3
+          aborted: false
+      source: |2
+              cleanListeners();
+              this._openRequests--;
+              callback(new ConnectionError(err.message), null);
+        ---------------^
+            };
+      ...
+    
+    1..1
+not ok 12 - handle datastreams during bulk insert # time=2.876ms
+  ---
+  at:
+    fileName: test/acceptance.test.js
+    lineNumber: 334
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('handle datastreams during bulk insert', { timeout }, async (t) => {
+    ^
+      if (supportsDatastreams()) {
+        // Arrange
+  ...
+
+1..12

@@ -4,12 +4,12 @@ const { once } = require('events')
 const { pino } = require('pino')
 const elastic = require('../')
 const { teardown, beforeEach, test } = require('tap')
-const { Client } = require('@elastic/elasticsearch')
+const { Client } = require('@opensearch-project/opensearch')
 const ecsFormat = require('@elastic/ecs-pino-format')
 
 const index = 'pinotest'
 const streamIndex = 'logs-pino-test'
-const type = 'log'
+const type = '_doc'
 const node = 'http://127.0.0.1:9200'
 const timeout = 5000
 const auth = {

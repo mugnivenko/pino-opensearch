@@ -5,7 +5,7 @@ const minimist = require('minimist')
 const pump = require('pump')
 const fs = require('fs')
 const path = require('path')
-const pinoElasticSearch = require('./lib')
+const pinoOpenSearch = require('./lib')
 
 function start (opts) {
   if (opts.help) {
@@ -14,7 +14,7 @@ function start (opts) {
   }
 
   if (opts.version) {
-    console.log('pino-elasticsearch', require('./package.json').version)
+    console.log('pino-opensearch', require('./package.json').version)
     return
   }
 
@@ -37,7 +37,7 @@ function start (opts) {
     opts.rejectUnauthorized = opts.rejectUnauthorized !== 'false'
   }
 
-  const stream = pinoElasticSearch(opts)
+  const stream = pinoOpenSearch(opts)
 
   stream.on('unknown', (line, error) => {
     console.error('Elasticsearch client json error in line:\n' + line + '\nError:', error)

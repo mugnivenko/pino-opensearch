@@ -1,7 +1,7 @@
 'use strict'
 
 const pinoJs = require('pino')
-const elastic = require('./lib')({
+const opensearch = require('./lib')({
   index: 'pinotest',
   node: 'http://localhost:9200',
   auth: {
@@ -13,7 +13,7 @@ const elastic = require('./lib')({
 
 const level = 'trace'
 const pino = pinoJs({ level }, pinoJs.multistream([
-  { level, stream: elastic },
+  { level, stream: opensearch },
   { level, stream: process.stdout }
 ]))
 

@@ -1,9 +1,9 @@
 import type { Transform } from 'stream'
-import type { ClientOptions } from '@elastic/elasticsearch'
+import type { ClientOptions } from '@opensearch-project/opensearch'
 
-export default pinoElasticsearch
+export default pinoOpensearch
 
-declare function pinoElasticsearch(options?: Options): DestinationStream
+declare function pinoOpensearch(options?: Options): DestinationStream
 
 export type DestinationStream = Transform & {
   /**
@@ -24,31 +24,14 @@ export type DestinationStream = Transform & {
   on(event: 'error', handler: (error: Error) => void): void
 }
 
-export type Options = Pick<ClientOptions, 'node' | 'auth' | 'cloud' | 'caFingerprint' | 'Connection' | 'ConnectionPool'> & {
+export type Options = Pick<ClientOptions, 'node' | 'auth' | 'cloud' | 'Connection' | 'ConnectionPool'> & {
   index?: Index
-
   type?: string
-
-  /** @deprecated use `opType` instead */
-  op_type?: OpType;
   opType?: OpType;
-
-  /** @deprecated use `flushBytes` instead */
-  'flush-bytes'?: number | undefined
   flushBytes?: number | undefined
-
-  /** @deprecated use `flushInterval` instead */
-  'flush-interval'?: number | undefined
   flushInterval?: number | undefined
-
-  /** @deprecated use `esVersion` instead */
-  'es-version'?: number | undefined
   esVersion?: number | undefined
-
-  /** @deprecated use `tls.rejectUnauthorized` instead */
-  rejectUnauthorized?: boolean
-
-  tls?: ClientOptions['tls'];
+  ssl?: ClientOptions['ssl'];
 }
 
 export type Index = string | `${string | ''}%{DATE}${string | ''}` | ((logTime: string) => string)

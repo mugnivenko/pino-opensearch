@@ -1,0 +1,32 @@
+TAP version 14
+# Subtest: CLI: arg node should passed to client constructor
+    ok 1 - should be equivalent
+    1..1
+ok 1 - CLI: arg node should passed to client constructor # time=23.751ms
+
+# Subtest: CLI: arg rejectUnauthorized, if set to 'true', should passed as true (bool) to client constructor
+    ok 1 - should be equivalent
+    1..1
+ok 2 - CLI: arg rejectUnauthorized, if set to 'true', should passed as true (bool) to client constructor # time=1.145ms
+
+# Subtest: CLI: arg rejectUnauthorized, if set to 'false', should passed as false (bool) to client constructor
+    ok 1 - should be equivalent
+    1..1
+ok 3 - CLI: arg rejectUnauthorized, if set to 'false', should passed as false (bool) to client constructor # time=0.987ms
+
+# Subtest: CLI: arg rejectUnauthorized, if set to anything instead of true or false, should passed as true (bool) to client constructor
+    ok 1 - should be equivalent
+    1..1
+ok 4 - CLI: arg rejectUnauthorized, if set to anything instead of true or false, should passed as true (bool) to client constructor # time=0.944ms
+
+# Subtest: CLI: if arg.read-config is set, should read the config file and passed the value (only allowed values)
+    ok 1 - should be equivalent
+    1..1
+ok 5 - CLI: if arg.read-config is set, should read the config file and passed the value (only allowed values) # time=1.193ms
+
+# Subtest: CLI: arg opType should be passed to client constructor
+    ok 1 - should be equivalent
+    1..1
+ok 6 - CLI: arg opType should be passed to client constructor # time=0.761ms
+
+1..6
